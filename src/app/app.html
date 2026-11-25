@@ -214,6 +214,8 @@ placeholder="Enter new user name.."
 
 <!-- ["Peter","Hari", "Shankar","Radha"] -->
 
+<!-- <h1>SelectedUserName : {{selectedUserName()}}</h1>
+
 <input
 type="text"
 [value]="newUser()"
@@ -224,5 +226,14 @@ placeholder="Enter new name.."
 
 
 @for(user of users(); track user){
-  <app-child [userName]="user"></app-child>
-}
+  <app-child 
+  [userName]="user"
+  (selectedUser) = "selectedUser($event)"
+  (deleteUser) = "deleteUser($event)"
+  >
+</app-child>
+} -->
+
+<!-- --------------------------Global State Management------------------------------------------- -->
+ <app-display-counter></app-display-counter>
+ <app-control-counter></app-control-counter>

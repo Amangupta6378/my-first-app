@@ -14,6 +14,18 @@ export class Child {
   @Input() age : string | undefined
 
   @Input() userName : string | undefined;
+  @Output() selectedUser = new EventEmitter()
+  @Output() deleteUser = new EventEmitter()
+
+  whichUser(name:string | undefined){
+    // console.log(name)
+    this.selectedUser.emit(name)
+  }
+
+  delete(name:string|undefined){
+    console.log(name)
+    this.deleteUser.emit(name)
+  }
 
 
 }

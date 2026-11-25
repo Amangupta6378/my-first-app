@@ -5,10 +5,12 @@ import { Ananya } from './ananya/ananya';
 import { Login } from './login/login';
 import { FormsModule } from '@angular/forms';
 import { Child } from './child/child';
+import { DisplayCounter } from './display-counter/display-counter';
+import { ControlCounter } from './control-counter/control-counter';
 
 
 @Component({
-  imports: [RouterOutlet,  FormsModule, Child],
+  imports: [RouterOutlet,  FormsModule, Child, DisplayCounter, ControlCounter],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
@@ -189,6 +191,8 @@ userName = signal("Aman Gupta")
 users = signal(["Peter","Hari", "Shankar","Radha"])
 newUser = signal("");
 
+selectedUserName = signal('')
+
 
 // addUser(){
 //   this.users.update((data)=>([...data, this.newUser()]))
@@ -199,6 +203,17 @@ addUser(){
   this.users.update((data)=>([...data, this.newUser()]))
   this.newUser.set('')
 }
+
+selectedUser(name:string){
+  // console.log(name);
+  this.selectedUserName.set(name)
+}
+
+deleteUser(name:string){
+  this.users.update((data)=>data.filter((item)=>item != name))
+}
+
+
 
 
 
