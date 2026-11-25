@@ -1,16 +1,18 @@
 import { Component, effect, signal, computed, WritableSignal } from '@angular/core';
 import { log } from 'console';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Ananya } from './ananya/ananya';
 import { Login } from './login/login';
 import { FormsModule } from '@angular/forms';
 import { Child } from './child/child';
 import { DisplayCounter } from './display-counter/display-counter';
 import { ControlCounter } from './control-counter/control-counter';
+import { Header } from './pages/header/header';
+
 
 
 @Component({
-  imports: [RouterOutlet,  FormsModule, Child, DisplayCounter, ControlCounter],
+  imports: [RouterOutlet,  FormsModule, Child, DisplayCounter, ControlCounter, RouterLink, Header],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
