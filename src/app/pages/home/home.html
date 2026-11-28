@@ -1,6 +1,11 @@
 <div style="text-align: center;">
     <h1>home Page!</h1>
     <a routerLink="/profile" [queryParams]="{id:1,name:'Aman', age:24}">Go to Aman profile</a> <br>
-    <a routerLink="/profile" [queryParams]="{id:2,name:'Ananya', age:25}">Go to Ananya profile</a> <br>
+    <!-- <a routerLink="/profile" [queryParams]="{id:2,name:'Ananya', age:25}">Go to Ananya profile</a> <br> -->
     <a routerLink="/profile" [queryParams]="{id:3,name:'Tamanna', age:24}">Go to Tamanna profile</a>
+
+    <h1>Route Params</h1>
+    <a routerLink="/about/1/aman">Go To About page</a><br>
+    <a routerLink="/about/2/ananya">Go To About page</a><br>
+    <a [routerLink]="['/about', userData().id,userData().name]">Go to About page 2</a>
 </div>

@@ -10,6 +10,7 @@ import { Profile } from './pages/profile/profile';
 export const routes: Routes = [
     {path:"", component:Home},
     {path:"about", component:About},
+    {path:"about/:id/:name", component:About},
     {path:"contact", component:Contact},
     {path:"login", component:Login},
     {path:"profile", component:Profile},
